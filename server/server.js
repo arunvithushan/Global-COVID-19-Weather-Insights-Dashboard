@@ -33,8 +33,10 @@ app.use(passport.session());
 
 // Routes
 app.use('/auth', authRoutes);
+
 app.use('/submit', apiKeyAuth, submitRoute);
 app.use('/records', apiKeyAuth, recordsRoute);
+
 app.get('/', (req, res) => res.send('COVID-Weather Backend Running'));
 
 app.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));
